@@ -171,7 +171,7 @@ export default {
 
         appCollector.on('collect', async (appBtn) => {
           if (appBtn.user.id !== interaction.user.id) {
-            return appBtn.reply({ content: 'This is not your menu.', ephemeral: true });
+            return appBtn.reply({ content: 'This is not your menu.<:DogHush:1275908540812361925>', ephemeral: true });
           }
 
           if (appBtn.customId.startsWith('app_next_')) {
