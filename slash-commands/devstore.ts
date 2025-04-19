@@ -132,7 +132,7 @@ export default {
 
     collector.on('collect', async (btn) => {
       if (btn.user.id !== interaction.user.id) {
-        return btn.reply({ content: 'This is not your menu.', ephemeral: true });
+        return btn.reply({ content: 'This is not your menu.<:DogHush:1275908540812361925>', ephemeral: true });
       }
 
       if (btn.customId === 'cat_next_page') {
