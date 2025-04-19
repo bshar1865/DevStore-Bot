@@ -118,11 +118,12 @@ export default {
 
     let currentCatPage = 0;
 
-    const categoryMessage = await interaction.reply({
+    await interaction.reply({
       content: 'Select a category:',
       components: [getCategoryButtons(currentCatPage)],
-      fetchReply: true,
     });
+    
+    const categoryMessage = await interaction.fetchReply();
 
     const collector = categoryMessage.createMessageComponentCollector({
       componentType: ComponentType.Button,
