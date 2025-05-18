@@ -34,14 +34,11 @@ import {
   
       const avatarURL = member.displayAvatarURL({ size: 4096 });
   
-      // Fetch user data to get global banner
       const user = await (message.client as Client).users.fetch(member.id, { force: true });
       const bannerURL = user.bannerURL({ size: 4096 });
   
-      // Server banner, if they have it
       const guildBannerURL = member.bannerURL({ size: 4096 });
   
-      // Send profile picture embed
       const avatarEmbed = new EmbedBuilder()
         .setTitle(`${member.displayName}'s Profile Picture`)
         .setImage(avatarURL)
@@ -53,7 +50,6 @@ import {
         allowedMentions: { parse: [] }
       });
   
-      // Show server banner if it exists, otherwise show global banner
       const bannerToUse = guildBannerURL || bannerURL;
   
       if (bannerToUse) {

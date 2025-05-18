@@ -21,7 +21,6 @@ export async function logErrorToChannel(error: any, source = 'Unknown') {
     }
 }
 
-// Hook console.error
 const originalConsoleError = console.error;
 console.error = (...args) => {
     originalConsoleError(...args);
